@@ -1,42 +1,12 @@
 <div class="container">
-  <!-- <cdk-virtual-scroll-viewport itemSize="220" class="card"
+  <cdk-virtual-scroll-viewport itemSize="100" class="card disable-scrollbars"
     (scrolledIndexChange)="getNextBatch($event)">
-    <div *cdkVirtualFor="let item of listComponent; let idx= index">
+    <div *cdkVirtualFor="let item of listComponent; let idx=
+      index">
       <div class="card-itm">
         Dynamic Comp {{idx}}
         <ng-container [ngComponentOutlet]="item.comp"></ng-container>
       </div>
     </div>
-  </cdk-virtual-scroll-viewport> -->
-  <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-    <div *cdkVirtualFor="let items of listDemo" class="example-item">
-      <div class="example-sub-item" *ngFor="let item of items; let i= index">
-        <div class="card-itm">
-          <ng-container [ngComponentOutlet]="item.comp"></ng-container>
-        </div>
-      </div>
-    </div>
-  </cdk-virtual-scroll-viewport> -->
-  <cdk-virtual-scroll-viewport itemSize="220" class="card"
-    (scrolledIndexChange)="getNextBatch($event)">
-    <div *cdkVirtualFor="let items of listDemo; let idx= index">
-      <div class="flex">
-        <div class="card-itm" *ngFor="let item of items; let i= index">
-          Dynamic Comp {{i}}
-          <ng-container [ngComponentOutlet]="item.comp"></ng-container>
-        </div>
-      </div>
-    </div>
   </cdk-virtual-scroll-viewport>
-
-  <!-- <cdk-virtual-scroll-viewport itemSize="220" class="card"
-    (scrolledIndexChange)="getNextBatch($event)">
-    <div *cdkVirtualFor="let items of listDemo">
-      <div *ngFor="let item of items">
-        <div class="card-itm">
-          <ng-container [ngComponentOutlet]="item.comp"></ng-container>
-        </div>
-      </div>
-    </div>
-  </cdk-virtual-scroll-viewport> -->
 </div>

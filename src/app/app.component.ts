@@ -21,9 +21,7 @@ export class AppComponent implements OnInit {
   listDemo: any = [];
   getNextBatch(e: any) {
     const end = this.viewport.getRenderedRange().end;
-    console.log("end: ", end);
     const total = this.viewport.getDataLength();
-    console.log("total: ", total);
     // if (total - e > 5) return;
     if (total - e === 5) console.log('2222');
     if (end === total) {
@@ -31,13 +29,12 @@ export class AppComponent implements OnInit {
         id: this.listComponent.length,
         comp: DynamicComponentComponent
       })));
-      console.log("this.listComponent: ", this.listComponent);
       this.listDemo = this.generateDataChunk(this.listComponent);
-      console.log("this.listDemo: ", this.listDemo);
     }
 
   }
 
+  // https://stackoverflow.com/questions/57476762/angular-material-cdk-virtual-scroll-viewport-how-to-render-multiple-items-per-r
   generateDataChunk(data: any, chunk = 2) {
     let index: number;
     let dataChunk: [][] = [];
